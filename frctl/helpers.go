@@ -14,6 +14,7 @@ func applyFunc(c, z complex128) complex128 {
 	return cmplx.Exp(cmplx.Cos(c * z))
 }
 
+// ParseImageBounds parses image bounds. Expected input {int}x{int}.
 func ParseImageBounds(bounds string) (int, int, error) {
 	buff := strings.Split(bounds, "x")
 	h, err := strconv.Atoi(buff[0])
@@ -25,6 +26,7 @@ func ParseImageBounds(bounds string) (int, int, error) {
 	return 0, 0, err
 }
 
+// ParseAreaBounds parses area bounds e.g. xa, xb, ya, yb
 func ParseAreaBounds(bounds string) ([4]float64, error) {
 	var b [4]float64
 	buff := strings.Split(bounds, ":")

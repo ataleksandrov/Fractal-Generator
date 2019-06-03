@@ -6,6 +6,7 @@ type options struct {
 	quietMode          bool
 }
 
+// NewOptions returns new options e.g. numberOfGoroutines, outputFile, quietMode
 func NewOptions(numberOfGoroutines int, outputFile string, quietMode bool) *options {
 	return &options{
 		numberOfGoroutines: numberOfGoroutines,

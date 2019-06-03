@@ -1,9 +1,10 @@
 package main
 
 import (
+	"log"
+
 	"github.com/ataleksand/Fractal-Generator/frctl"
 	"github.com/spf13/pflag"
-	"log"
 )
 
 var numberOfGoroutines int

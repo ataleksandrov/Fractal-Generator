@@ -11,6 +11,7 @@ type imageTraverser struct {
 	xa, xb, ya, yb      float64
 }
 
+// NewImageTraverser returns new image traverser
 func NewImageTraverser(imgWidth, imgHeight int, rect [4]float64) *imageTraverser {
 	return &imageTraverser{
 		imgWidth:  imgWidth,

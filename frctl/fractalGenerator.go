@@ -15,6 +15,7 @@ type fractalGenerator struct {
 	imgTr *imageTraverser
 }
 
+// NewFractalGenerator returns new fractal generator
 func NewFractalGenerator(o *options, i *imageTraverser) *fractalGenerator {
 	return &fractalGenerator{
 		opt:   o,
@@ -22,6 +23,7 @@ func NewFractalGenerator(o *options, i *imageTraverser) *fractalGenerator {
 	}
 }
 
+// Generate generates the fractal
 func (fg *fractalGenerator) Generate() {
 	totalTime := time.Now()
 
@@ -41,7 +43,7 @@ func (fg *fractalGenerator) Generate() {
 			fg.imgTr.traverseImg(sRow, sRow+rowsPerGoroutine, img)
 			printAdditionalInfo(fg.opt, "Finished: goroutine %d with time %v \n", i, time.Since(t))
 			wg.Done()
-		}(sRow, int(i))
+		}(sRow, i)
 	}
 	wg.Wait()
 
